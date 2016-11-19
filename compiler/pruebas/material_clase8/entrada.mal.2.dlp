@@ -1,0 +1,14 @@
+'''
+	Prueba semántico
+	DLP 15/16
+'''
+
+date as struct { 
+  day as int;
+  mounth as int;
+  day as double; 	# Error 1 -> campo repetido (este error se supone que ya esta tratado)
+};
+
+def main() {
+  input date.year; 	# Error 2 -> campo no existe: TENEMOS QUE COMPROBAR QUE EXISTE
+}

@@ -1,0 +1,19 @@
+'''
+	Prueba de an�lisis sint�ctico
+	DLP 15/16
+'''
+
+'a'
+'\126'
+
+integer as int; 
+real as double; 
+vector as int[10];
+
+def main(){
+	input integer;
+	real = integer/2;
+	print real;
+	vector[integer] = -integer;
+	print vector[integer];
+}

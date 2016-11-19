@@ -1,0 +1,14 @@
+'''
+	Prueba de identificación
+	DLP 15/16
+'''
+
+integer as int;
+character as char;
+real, integer as double; 	# Error 1 -> integer ya esta declarado
+
+def main() {
+  character as double;
+  input integer, unknow; 	# Error 2 -> unknow no esta declarado
+  f(); 						# Error 3 -> no esta declarado
+}

@@ -1,0 +1,16 @@
+'''
+	Manejador de Errores
+	DLP 15/16
+'''
+
+tuple as struct { 
+	key as int;	
+	value as int;	
+	key as double; # Campo duplicado
+};
+
+# Programa principal
+def main() {
+
+}
+

@@ -1,0 +1,28 @@
+'''
+	Prueba de análisis semántico
+	DLP 15/16
+'''
+
+index as int; 
+def function(integer as int) as int{
+  return integer;
+}
+
+
+# Registro
+date as struct { 
+	day, mounth, year as int;	
+};
+
+# Programa principal
+def main() {
+  index as int; 
+  value as int;
+  matrix as int[5][3];
+  
+  index = 3;
+  value = -index*-index;  
+  value = date.day;
+  matrix[index][function(index)] = value;
+  print 'f','u','n','c','t','i','o','n','(','i','n','d','e','x',')','=',function(index);
+}

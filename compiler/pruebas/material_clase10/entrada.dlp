@@ -1,0 +1,47 @@
+'''
+	Generacion de codigo
+	DLP 15/16
+'''
+
+# Variables globales
+character as char;
+integer as int;
+real as double;
+
+# Programa principal
+def main() {
+	# Variables locales
+	linteger as int;
+	lcharacter as char;
+	lreal as double;
+	
+	# Sentencias: lectura, escritura y asignacion
+	# char
+	lcharacter = 'c';
+	character = lcharacter;
+	print character, '=', lcharacter, '\n';
+	# int
+	linteger = 1;
+	integer = lcharacter * linteger;
+	print linteger, ' ', integer, '\n';
+	# double
+	input lreal;
+	real = 2 * lreal;
+	print real, '=',  2 * lreal, '\n';
+	
+	# Operaciones aritmeticas
+	print 
+		3 - 4.5, ' ', 
+		'0'/48.0, ' ',
+		'0'%'1', ' ',
+		'0'+'1', '\n';
+	
+	# Operaciones de comparacion y logicas
+	print 
+		1<2, ' ',
+		4>=3, ' ',
+		5==5, ' ',
+		1&&2, ' ',
+		0||3, ' ',
+		!0, '\n';
+}

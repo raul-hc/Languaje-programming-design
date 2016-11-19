@@ -1,0 +1,24 @@
+'''
+	Prueba semántico
+	DLP 15/16
+'''
+
+integer as int;
+
+def function(parameter as int) as int {
+  parameter as double;									# Error 1 -> Parametro repetido (Este error ya deberia de estar tratado) 
+  return 34.5;											# Error 2 -> Tipo de retorno de la funcion no coincide con el tipo de retorno del return
+}
+
+def procedure(parameter as int, parameter as double) {	# Error 3 -> Parametros repetidos (Este error ya deberia de estar tratado)
+  return 3;												# Error 4 -> La funcion no tiene tipo de retorno (TipoVoid) y el tipo del return es TipoEntero ( = ERROR 2 )
+}
+
+def procedure () {										# Error 5 -> Idenficador repetido: la funcion procedure ya existe (Este error ya deberia de estar tratado)
+}
+
+def main() {
+  function();											# Error 6 -> Se espera un parametro en la llamada pero no le estamos pasando nada. 
+  function(3.2);										# Error 7 -> Tipo de los parametros no coincide
+  integer = procedure(1,1); 							# Error 8 -> Se esta asignando a una variable el resultado de una funcion que no devuelve nada -> visitor(Asignacion)
+}

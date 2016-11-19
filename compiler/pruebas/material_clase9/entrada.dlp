@@ -1,0 +1,50 @@
+'''
+	Calculo de offsets
+	DLP 15/16
+'''
+
+# Variables globales
+i as int;
+r as double;
+c as char;
+
+'''
+	matrix as double[2][2];		# Añadido RAUL 
+	TEST as double;				# Añadido RAUL 
+'''	
+
+# Funciones
+def f(pi as int,pr as double) as int {
+	lr as double;
+	li as int;
+	li = pi;
+	lr = pr;
+	return pi;
+}
+
+# Programa principal
+def main() {
+
+	#TEST as double;				# Añadido RAUL (offset -7)  [-3-(1*4B)]
+
+	miPar as struct { 
+		entero as int;
+		caracter as char;
+	};
+'''
+	TEST as double;				# Añadido RAUL (offset -7)  [-3-(1*4B)]
+	matrix as double[4];		# Añadido RAUL (offset -23) [-7-(4*4B)]
+	matrix as double[4][2];		# Añadido RAUL 
+'''
+
+	
+
+	i = 3;
+	c = 'a';
+	r = 3.8;
+	miPar.entero = i;
+	miPar.caracter = c;
+	f(i,r);
+}
+
+

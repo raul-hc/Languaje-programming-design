@@ -1,0 +1,90 @@
+'''
+	Control Evaluci�n Continua
+	DLP 15/16
+'''
+
+# Variables globales
+integer as int;
+character as char;
+real as double;
+
+MATRIXSIZE as int;
+matrix as int[10][4]; #[tipo=TipoArray[tipo=int,tamaño=4], tamaño=10]
+
+# Funciones
+def setValue(row as int, columnn as int, value as int){
+	if (row >= 0 && row < MATRIXSIZE) && (columnn >= 0 && columnn < MATRIXSIZE){
+		matrix[row][column] = value;
+	}
+}
+def getValue(row as int, columnn as int) as int{
+	if (row < 0 || row >= MATRIXSIZE) || (columnn < 0 && columnn >= MATRIXSIZE){
+		return -1;
+	}
+	else{	
+		return matrix[row][column];
+	}
+}
+def fill(value as int) {
+	i,j as int; # Declaracion multiple de variables
+	i = 0;	
+	while i < MATRIXSIZE {
+		j = 0;
+		while j < MATRIXSIZE {
+			setValue(i,j, value);
+			j = j + 1;
+		}
+		i = i + 1;
+	}
+}
+def show() {
+	i,j as int;
+	i = 0;	
+	print '[','\n';
+	while i < MATRIXSIZE {
+		j = 0;
+		print '\t','[';
+		while j < MATRIXSIZE {
+			print getValue(i,j);
+			if j != MATRIXSIZE - 1 {
+				print ',';
+			}
+			j = j + 1;
+		}
+		print ']','\n';	
+		i = i + 1;
+	}	
+	print ']';	
+}
+
+# Registro
+date as struct { 
+	day, mounth, year as int;	
+};
+
+# Programa principal
+# def no_main (){ # Descomentar para probar
+def main() {
+	MATRIXSIZE = 10;
+	fill(1);
+	setValue(5,5,5);
+	integer = getValue(5,5);
+	if integer == 5 {
+		print 'O','k','\n';
+	}
+	else {
+		print 'E','r','r','o','r','\n';
+	}
+	show();
+	
+	date.day = 9;
+	date.mounth = 3;
+	date.year = 2016;
+	
+	character = date.day cast char;
+	real = 4.5 + 4. * 3e+3 - 5.4E-3;
+	
+	#error as int; # Descomentar para probar
+}
+
+# def no_function(){} # Descomentar para probar

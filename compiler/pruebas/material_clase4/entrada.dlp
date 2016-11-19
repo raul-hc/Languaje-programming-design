@@ -1,0 +1,41 @@
+# Declaraciones de variables y definiciones de tipos
+i,n as int;
+c as char;
+ 
+# Funciones
+def p(){}
+ 
+def f(n as int, r as double) as int {
+    real as double;
+    c1, c2 as char;
+    c1 = n cast char;
+    real = c1 + n + r;
+    p(); # Invocación como sentencia
+    return c1 cast int;
+}
+ 
+# Programa principal
+def main(){
+    # Registro
+    miPar as struct {
+                   entero as int;
+                   caracter as char;
+    }; #En este punto faltaba un el punto y coma
+
+    # Array
+    vector as double[10][5];
+    i = 0;
+    while miPar.entero >= i {
+
+       if miPar.entero == vector[0][0] && !miPar.caracter { #  if miPar.entero == vector[0][0] && !miPar.caracter
+          print 'c', 'i', 'e', 'r', 't', 'o', '\n';
+       } else {
+          print 'f', 'a', 'l', 's', 'o', '\n';
+       }
+
+       i = i + 1;
+    }
+    print f(i, i cast int); # Invocación como expresión
+    vector[9][4.3 cast int] = 5.6;
+    f(1, 2.2); # Invocación como sentencia
+}

@@ -1,0 +1,102 @@
+
+#source	"entrada.dlp"
+
+	' * entero i (offset 0)
+	' * real r (offset 2)
+	' * caracter c (offset 6)
+
+' Invocación al main (siempre igual)
+call main
+halt
+
+
+#line	8
+
+ f:
+	' * Parametros
+	' * entero pi (offset 8)
+	' * real pr (offset 4)
+	' * Variables Locales
+	' * real lr (offset -4)
+	' * entero li (offset -6)
+	enter	6
+
+#line	11
+	push	bp
+	pushi	-6
+	addi
+	push	bp
+	pushi	8
+	addi
+	loadi
+	storei
+
+#line	12
+	push	bp
+	pushi	-4
+	addi
+	push	bp
+	pushi	4
+	addi
+	loadf
+	storef
+
+#line	13
+	' * return
+	push	bp
+	pushi	8
+	addi
+	loadi
+	ret	2, 6, 6
+
+#line	17
+
+ main:
+	' * Parametros
+	' * Variables Locales
+	' * registro((entero x entero)x(caracter x caracter)) miPar (offset -3)
+	enter	3
+
+#line	23
+	pusha	0
+	pushi	3
+	storei
+
+#line	24
+	pusha	6
+	pushb	97
+	storeb
+
+#line	25
+	pusha	2
+	pushf	3.8
+	storef
+
+#line	26
+	push	bp
+	pushi	-3
+	addi
+	pushi	0
+	addi
+	pusha	0
+	loadi
+	storei
+
+#line	27
+	push	bp
+	pushi	-3
+	addi
+	pushi	2
+	addi
+	pusha	6
+	loadb
+	storeb
+
+#line	28
+	pusha	0
+	loadi
+	pusha	2
+	loadf
+	call	f
+	popi
+	ret	0, 3, 0

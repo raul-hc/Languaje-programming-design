@@ -1,0 +1,13 @@
+'''
+	Prueba semántico
+	DLP 15/16
+'''
+
+vector as int[10];
+
+def main() {
+  integer as int;
+  integer[0] = 0;      	# Error 1 -> integer no es un array 
+  vector[3] = 3.4;    	# Error 2 -> no se puede meter un double en un entero
+  vector[1][2] = 'a'; 	# Error 3 -> el acceso a array con el indice 1 me devuelve un entero, no me devuelve un array para poder accederlo recursivamente. 
+}

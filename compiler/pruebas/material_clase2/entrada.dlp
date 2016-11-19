@@ -1,0 +1,48 @@
+'''
+	Prueba de análisis léxico
+	DLP 15/16
+'''
+
+x as int;
+
+# Función add
+def add(a as int, b as int) as int {
+	return a + b;
+}
+
+
+# Función Principal
+def main() {
+	integer as int;
+	real as double;	
+	character as char;
+	
+	tuple as struct {
+		key as int;
+		value as int;
+	}
+	
+	vector as int[5];
+	
+	integer = 5;
+	real = 17.35 + 30.1E-5 / 2. - 2e10;
+	character = '\126';
+		
+	tuple.key = integer;
+	tuple.value = x;
+	
+	x = vector[2];
+	
+	if 0 && 1 || !0 {
+		integer = x;
+	}
+	else {
+		integer = 1;
+	}
+	
+	print x;
+	
+	while integer<=5 {
+		integer=integer+1;		
+	}
+}

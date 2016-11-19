@@ -1,0 +1,320 @@
+
+#source	"entrada.dlp"
+
+		  call 	main
+		  halt
+
+	  p:
+	'*Parametros:
+	'*Variables Locales:
+		  enter 	0
+		  push 	bp
+		  pushi 	0
+		  addi 
+		  loadi
+		  ret 0, 0, 0
+
+	  f:
+	'*Parametros:
+	'	DefinicionVariable [nombre=e, tipo=int, ambito=1]  (offset: 4)
+	'	DefinicionVariable [nombre=r, tipo=double, ambito=1]  (offset: 6)
+	'*Variables Locales:
+	'	DefinicionVariable [nombre=real, tipo=double, ambito=1]  (offset: -4)
+	'	DefinicionVariable [nombre=c, tipo=char, ambito=1]  (offset: -5)
+		  enter 	5
+	'
+	'# real = ast.expresion.Aritmetica@2a139a55
+		  push 	bp
+		  pushi 	-4
+		  addi 
+		  pusha 	7
+		  pushi 	2
+		  addi 
+		  loadi
+		  b2i
+		  pusha 	7
+		  pushi 	0
+		  addi 
+		  loadi
+		  addi
+		  i2f
+		  push 	bp
+		  pushi 	6
+		  addi 
+		  loadf
+		  addf
+		  push 	bp
+		  pushi 	4
+		  addi 
+		  loadi
+		  i2f
+		  addf
+		  storef
+	'
+	'# c = 0
+		  pusha 	6
+		  pushb	48
+		  storeb
+	'
+	'# return ast.expresion.Cast@15db9742
+		  push 	bp
+		  pushi 	2
+		  addi 
+		  loadi
+		  ret 2, 5, 6
+
+	  rellenar:
+	'*Parametros:
+	'	DefinicionVariable [nombre=incremento, tipo=int, ambito=1]  (offset: 4)
+	'	DefinicionVariable [nombre=valor, tipo=int, ambito=1]  (offset: 6)
+	'	DefinicionVariable [nombre=fila, tipo=int, ambito=1]  (offset: 8)
+	'*Variables Locales:
+	'	DefinicionVariable [nombre=i, tipo=int, ambito=1]  (offset: -2)
+	'	DefinicionVariable [nombre=inc, tipo=int, ambito=1]  (offset: -4)
+		  enter 	4
+	'
+	'# i = ast.expresion.LiteralEntero@6d06d69c
+		  pusha 	0
+		  pushi	0
+		  storei
+	'
+	'# inc = incremento
+		  push 	bp
+		  pushi 	-4
+		  addi 
+		  push 	bp
+		  pushi 	4
+		  addi 
+		  loadi
+		  storei
+	'
+	'# ast.sentencia.While@7852e922
+
+	  etiqueta0:
+		  pusha 	0
+		  loadi
+		  pushi	10
+		  lti
+		  jz etiqueta1
+		  pusha 	10
+		  push 	bp
+		  pushi 	8
+		  addi 
+		  loadi
+		  pushi 	2
+		  muli 
+		  addi 
+		  pusha 	0
+		  loadi
+		  pushi 	2
+		  muli 
+		  addi 
+		  push 	bp
+		  pushi 	6
+		  addi 
+		  loadi
+		  push 	bp
+		  pushi 	-4
+		  addi 
+		  loadi
+		  addi
+		  storei
+		  pusha 	0
+		  pusha 	0
+		  loadi
+		  pushi	1
+		  addi
+		  storei
+		  push 	bp
+		  pushi 	-4
+		  addi 
+		  push 	bp
+		  pushi 	-4
+		  addi 
+		  loadi
+		  push 	bp
+		  pushi 	4
+		  addi 
+		  loadi
+		  addi
+		  storei
+		  jmp etiqueta0
+
+	  etiqueta1:
+		  push 	bp
+		  pushi 	0
+		  addi 
+		  loadi
+		  ret 0, 4, 6
+
+	  mostrar:
+	'*Parametros:
+	'	DefinicionVariable [nombre=fila, tipo=int, ambito=1]  (offset: 4)
+	'*Variables Locales:
+	'	DefinicionVariable [nombre=i, tipo=int, ambito=1]  (offset: -2)
+		  enter 	2
+	'
+	'# i = ast.expresion.LiteralEntero@4e25154f
+		  pusha 	0
+		  pushi	0
+		  storei
+	'
+	'# ast.sentencia.While@70dea4e
+
+	  etiqueta2:
+		  pusha 	0
+		  loadi
+		  pushi	10
+		  lti
+		  jz etiqueta3
+		  pushb	40
+		  outb
+		  push 	bp
+		  pushi 	4
+		  addi 
+		  loadi
+		  outi
+		  pushb	44
+		  outb
+		  pusha 	0
+		  loadi
+		  outi
+		  pushb	41
+		  outb
+		  pushb	58
+		  outb
+		  pusha 	10
+		  push 	bp
+		  pushi 	4
+		  addi 
+		  loadi
+		  pushi 	2
+		  muli 
+		  addi 
+		  pusha 	0
+		  loadi
+		  pushi 	2
+		  muli 
+		  addi 
+		  loadi
+		  outi
+		  pushb	32
+		  outb
+		  pusha 	0
+		  pusha 	0
+		  loadi
+		  pushi	1
+		  addi
+		  storei
+		  jmp etiqueta2
+
+	  etiqueta3:
+	'
+	'# ast.sentencia.Escritura@5c647e05
+		  pushb	10
+		  outb
+		  push 	bp
+		  pushi 	0
+		  addi 
+		  loadi
+		  ret 0, 2, 2
+
+	  main:
+	'*Parametros:
+	'*Variables Locales:
+	'	DefinicionVariable [nombre=i, tipo=int, ambito=1]  (offset: -2)
+		  enter 	2
+	'
+	'# ast.sentencia.Invocacion@33909752
+		  call 	p
+		  popi
+	'
+	'# i = ast.expresion.LiteralEntero@55f96302
+		  pusha 	0
+		  pushi	0
+		  storei
+	'
+	'# ast.expresion.AccesoCampo@3d4eac69 = 0
+		  pusha 	7
+		  pushi 	2
+		  addi 
+		  pushb	48
+		  storeb
+	'
+	'# ast.expresion.AccesoCampo@42a57993 = ast.expresion.Cast@75b84c92
+		  pusha 	7
+		  pushi 	0
+		  addi 
+		  pushb	48
+		  b2i
+		  storei
+	'
+	'# ast.sentencia.Escritura@6bc7c054
+		  pusha 	0
+		  loadi
+		  i2f
+		  pusha 	7
+		  pushi 	2
+		  addi 
+		  loadi
+		  b2i
+		  call 	f
+		  outi
+		  pushb	10
+		  outb
+	'
+	'# ast.sentencia.Invocacion@232204a1
+		  pushf	1.2999999523162842
+		  pushi	2
+		  call 	f
+		  popi
+	'
+	'# i = ast.expresion.LiteralEntero@4aa298b7
+		  pusha 	0
+		  pushi	0
+		  storei
+	'
+	'# j = ast.expresion.LiteralEntero@7d4991ad
+		  pusha 	4
+		  pushi	0
+		  storei
+	'
+	'# ast.sentencia.While@28d93b30
+
+	  etiqueta4:
+		  pusha 	0
+		  loadi
+		  pushi	10
+		  lti
+		  jz etiqueta5
+		  pusha 	0
+		  loadi
+		  pusha 	4
+		  loadi
+		  pushi	1
+		  call 	rellenar
+		  popi
+		  pusha 	0
+		  loadi
+		  call 	mostrar
+		  popi
+		  pusha 	0
+		  pusha 	0
+		  loadi
+		  pushi	1
+		  addi
+		  storei
+		  pusha 	4
+		  pusha 	0
+		  loadi
+		  pushi	10
+		  muli
+		  storei
+		  jmp etiqueta4
+
+	  etiqueta5:
+		  push 	bp
+		  pushi 	0
+		  addi 
+		  loadi
+		  ret 0, 2, 0

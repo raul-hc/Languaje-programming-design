@@ -1,0 +1,26 @@
+Elementos léxicos sensibles a mayúsculas/minúsculas.
+
+Elementos:
+
+   - Comentarios con # hasta el final de líneas
+
+   - Comentarios con varias líneas (de ''' hasta ''')
+   - Identificadores { letra (letra|digito)* } --> los identificadores obligatoriamente empiezan por letra
+  		- Se permitirán tildes y eñes
+
+   - Palabras Reservadas: input print while if else int double char struct return def as cast --> struct para los registros
+
+   - Constantes Enteras sin signo
+
+   - Constantes Reales con punto decimal y formato exponente 12.3, 34.12E-3, 2., 3e3
+   - Constantes carácter entre '', pudiendo identificar el código ASCII en decimal '\126' y '\n' '\t'
+
+
+   - Operadores + - / * % > < = == <= >= != ( )
+   - Un nuevo ambito se establece mediante el caracter '{' y finaliza con '}'.   
+   - El delimitador en la declaración de variables es ',' el de sentencias es ';' 
+   - POR CONVENIO, el final de fichero es el token 0 --> cuando se le acaben los TOKENS automaticamente va a devolver un cero (no hay que hacer nada)
+
+
+Laboratorio 1:
+a partir de un main donde te dice las clases que tienes que tener y lo unico que teniamos que pensar era si el nodo AST lo ponia como una interfaz, como una clase abstracta o nose que o si hago la gochada de meter la linea y columna en todos los nodos

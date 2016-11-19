@@ -1,0 +1,65 @@
+package ast.sentencia.definicion;
+
+import ast.expresion.Variable;
+import ast.tipo.Tipo;
+import ast.tipo.TipoArray;
+
+
+public class DefinicionVariable extends AbstractDefinicion {
+
+	private Variable variable;
+	private Tipo tipo;
+
+	public DefinicionVariable(int linea, int columna, Variable variable, Tipo tipo) {
+		super(linea, columna);
+		
+		this.variable = variable;
+		this.tipo = tipo;
+		
+		invertirArray();
+	}
+
+	public Tipo getTipo() {
+		return tipo;
+	}
+
+	public void setTipo(Tipo tipo) {
+		this.tipo = tipo;
+	}
+	
+	public Variable getVariable() {
+		return variable;
+	}
+	
+	
+	public void invertirArray(){
+		if (tipo instanceof TipoArray){ 
+			Tipo aux = null;
+			TipoArray antes = null, despues;
+			Tipo actual = (TipoArray) this.tipo;
+			
+			while(actual.getTipo() instanceof TipoArray){ // mientras no sea un tipo simple no estoy en el final
+				despues = (TipoArray) actual.getTipo();
+				actual.setTipo(antes);
+				antes = (TipoArray) actual; // el tipo del nodo anterior pasa a ser el tipo del nodo actual
+				aux = despues;
+			}
+			
+			actual = aux.getTipo();
+			aux.setTipo(antes);
+			tipo = aux;
+			
+			obtenerTipoRecursivo(tipo, actual);
+				
+		}
+	}
+
+	private void obtenerTipoRecursivo(Tipo tipo, Tipo actual) { 
+		if (((TipoArray) tipo).getTipo() == null){
+			((TipoArray) tipo).setTipo(actual);
+		} else { // Seguimos hasta que encontremos un tipo simple
+			obtenerTipoRecursivo(((TipoArray) tipo).getTipo(), actual);
+		}
+	}
+
+}

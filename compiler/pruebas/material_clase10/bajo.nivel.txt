@@ -1,0 +1,139 @@
+
+real as double;
+
+# Programa principal
+def main() {
+	lreal as double;
+
+	print real, '=',  2 * lreal, '\n';
+	
+	print ' ';
+	print '0'/48.0;
+	print '0'%'1';
+	print '0'+'1';
+	print '\n';
+	
+	print 3;
+	print 4.5;
+	
+	print 3-4.5;
+}
+
+
+
+
+
+
+
+	PUSHB <CTE_ENT>		Apila el valor entero de una constante caracter.
+	PUSH[I] <CTE_ENT>	Apila el valor entero de una constante entera.
+	PUSHF <CTE_REAL>	Apila el valor real de una constante real.
+
+	PUSHA <ID>	Apila la direcci�n de una variable.
+
+	LOAD{B,[I],F}	Sustituye la direcci�n del tope de la pila por su valor 
+		entero asociado.
+		El sufijo es indica el tipo.
+
+	STORE{B,[I],F}	Almacena el valor del tope de la pila en la direcci�n 
+		que est� justo debajo en la pila.
+		El sufijo es indica el tipo.
+
+	ADD{[I],F}	Suma los dos valores que est�n en la cima de la pila, 
+		dejando el resultado en la cima de la pila.
+		El sufijo es indica el tipo.
+
+	SUB{[I],F}	Resta los dos valores que est�n en la cima de la pila, 
+		dejando el resultado en la cima de la pila. El minuendo 
+		es el que fue introducido con anterioridad. El sufijo es indica el tipo.
+		El sufijo es indica el tipo.
+
+	MUL{[I],F}	Multiplica los dos valores que est�n en la cima de la 
+		pila, dejando el resultado en la cima de la pila. 
+		El sufijo es indica el tipo.
+
+	DIV{[I],F}	Divide los dos valores que est�n en la cima de la pila, 
+		dejando el resultado en la cima de la pila. 
+		El dividendo es el que fue introducido con anterioridad.
+		El sufijo es indica el tipo.
+
+	MOD[I]	Calcula el m�dulo de los dos valores que est�n en la 
+		cima de la pila, dejando el resultado en la 
+		cima de la pila. El dividendo es el que fue introducido 
+		con anterioridad.
+		El sufijo es indica el tipo.
+
+	OUT{B,[I],F}	Muestra por pantalla el valor entero situado en
+		el tope de la pila. Este valor es desapilado.
+		El sufijo es indica el tipo.
+
+	IN{B,[I],F}	Pide por teclado un valor (car�cter, real o entero, en funci�n
+		del sufijo) y lo sit�a en el tope de la pila.
+
+	ENTER <CTE_ENTERA>	Reserva los bytes indicados para las variables locales
+			de la funci�n que se va a ejecutar a continuaci�n.
+
+	CALL <ID>	Invocaci�n a una funci�n.
+
+	HALT		Finalizaci�n de la ejecuci�n.
+
+	B2I	Convierte el valor car�cter del tope de la pila a un entero
+	I2F	Convierte el valor entero del tope de la pila a un real
+	F2I	Convierte el valor real del tope de la pila a un entero
+	I2B	Convierte el valor entero del tope de la pila a un car�cter
+
+	GT{[I],F}
+		Compara los dos valores en el tope de la pila. Si el que est�
+		m�s abajo es mayor que el que se encuentra en el tope, introduce
+		el valor entero 1; 0 en otro caso.
+
+	LT{[I],F}
+		Compara los dos valores en el tope de la pila. Si el que est�
+		m�s abajo es menor que el que se encuentra en el tope, introduce
+		el valor entero 1; 0 en otro caso.
+
+	GE{[I],F}
+		Compara los dos valores en el tope de la pila. Si el que est�
+		m�s abajo es mayor o igual que el que se encuentra en el tope, introduce
+		el valor entero 1; 0 en otro caso.
+
+	LE{[I],F}
+		Compara los dos valores en el tope de la pila. Si el que est�
+		m�s abajo es menor o igual que el que se encuentra en el tope, introduce
+		el valor entero 1; 0 en otro caso.
+
+	NE{[I],F}
+		Compara los dos valores en el tope de la pila. Si el que est�
+		m�s abajo es distinto que el que se encuentra en el tope, introduce
+		el valor entero 1; 0 en otro caso.
+
+	EQ{[I],F}
+		Compara los dos valores en el tope de la pila. Si el que est�
+		m�s abajo es igual que el que se encuentra en el tope, introduce
+		el valor entero 1; 0 en otro caso.
+	
+	AND	Realiza la condici�n l�gica Y entre los dos valores enteros en el tope
+		de la pila, apilando el valor entero resultante
+
+	OR	Realiza la condici�n l�gica O entre los dos valores enteros en el tope
+		de la pila, apilando el valor entero resultante
+
+	NOT	Realiza la condici�n l�gica NO con el valor entero en el tope
+		de la pila, apilando el valor entero resultante
+
+	RET	<CTE_ENT>, <CTE_ENT>, <CTE_ENT>
+		Renorna el control en la invoaci�n a una funci�n.
+		Veremos en otra clase el significado de las constantes.
+
+	<ID>:	Etiqueta
+
+	Salto de Carro	Delimitador de Instrucciones.
+
+	'			Comentario hasta final de l�nea.
+
+	#source <CTE_CADENA>
+		Directiva de depuraci�n para indicar el fichero de alto nivel
+
+	#line <CTE_ENT>
+		Directiva de depuraci�n para indicar el n�mero de l�nea del 
+		programa de alto nivel

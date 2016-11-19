@@ -1,0 +1,37 @@
+'''
+	Prueba de identificación
+	DLP 15/16
+'''
+
+# Variables globales
+date as struct {
+	day, mounth, year as int;
+};
+
+integer as int;
+real as double;
+array as int[10];
+
+# Funciones
+def function(i as int, c as char) as int {
+	real as double;
+	real = c cast double;
+	integer = i;
+	return integer;
+}
+
+# Programa principal
+def main() {
+	size as int;
+	count as int;
+	count = 0;
+	integer = 10;	
+	date.day = 23;
+	date.mounth = 3;
+	date.year = 2016;
+	print function(date.day,date.mounth cast char);
+	while(count < size){
+		print array[count];
+		count = count + 1;
+	}	
+}

@@ -1,0 +1,405 @@
+
+#source	"entrada.dlp"
+
+	' * int[20] vector (offset 0)
+
+' Invocación al main (siempre igual)
+call main
+halt
+
+
+#line	10
+
+ main:
+	' * Parametros
+	' * Variables Locales
+	' * STRUCT{  day int,  mounth int,  year int,  } date (offset -6)
+	' * double[10][5] matrix (offset -206)
+	' * int i (offset -208)
+	' * int j (offset -210)
+	enter	210
+
+#line	17
+	push	bp
+	pushi	-6
+	addi
+	pushi	0
+	addi
+	pushi	26
+	storei
+
+#line	18
+	push	bp
+	pushi	-6
+	addi
+	pushi	2
+	addi
+	pushf	4.0
+	f2i
+	storei
+
+#line	19
+	push	bp
+	pushi	-6
+	addi
+	pushi	4
+	addi
+	pushi	2016
+	storei
+
+#line	20
+	' * Escritura
+	push	bp
+	pushi	-6
+	addi
+	pushi	0
+	addi
+	loadi
+	outi
+	' * Escritura
+	pushb	10
+	outb
+	' * Escritura
+	push	bp
+	pushi	-6
+	addi
+	pushi	2
+	addi
+	loadi
+	outi
+	' * Escritura
+	pushb	10
+	outb
+	' * Escritura
+	push	bp
+	pushi	-6
+	addi
+	pushi	4
+	addi
+	loadi
+	outi
+	' * Escritura
+	pushb	10
+	outb
+
+#line	22
+	push	bp
+	pushi	-208
+	addi
+	pushi	0
+	storei
+	' * While
+
+#line	23
+ etiqueta0:
+	push	bp
+	pushi	-208
+	addi
+	loadi
+	pushi	10
+	lti
+	jz	etiqueta1
+	' * Cuerpo del while
+	' * If
+
+#line	24
+	push	bp
+	pushi	-208
+	addi
+	loadi
+	pushi	0
+	eqi
+	jz	etiqueta2
+	' * Cuerpo del if
+
+#line	25
+	' * Escritura
+	pushb	91
+	outb
+	jmp	etiqueta3
+ etiqueta2:
+	' * Cuerpo del else
+ etiqueta3:
+
+#line	27
+	pusha	0
+	push	bp
+	pushi	-208
+	addi
+	loadi
+	pushi	2
+	muli
+	addi
+	push	bp
+	pushi	-208
+	addi
+	loadi
+	storei
+
+#line	28
+	' * Escritura
+	pusha	0
+	push	bp
+	pushi	-208
+	addi
+	loadi
+	pushi	2
+	muli
+	addi
+	loadi
+	outi
+	' * If
+
+#line	29
+	push	bp
+	pushi	-208
+	addi
+	loadi
+	pushi	9
+	eqi
+	jz	etiqueta4
+	' * Cuerpo del if
+
+#line	30
+	' * Escritura
+	pushb	93
+	outb
+	' * Escritura
+	pushb	10
+	outb
+	jmp	etiqueta5
+ etiqueta4:
+	' * Cuerpo del else
+
+#line	33
+	' * Escritura
+	pushb	44
+	outb
+ etiqueta5:
+
+#line	35
+	push	bp
+	pushi	-208
+	addi
+	push	bp
+	pushi	-208
+	addi
+	loadi
+	pushi	1
+	addi
+	storei
+	jmp	etiqueta0
+ etiqueta1:
+
+#line	38
+	push	bp
+	pushi	-208
+	addi
+	pushi	0
+	storei
+	' * While
+
+#line	39
+ etiqueta6:
+	push	bp
+	pushi	-208
+	addi
+	loadi
+	pushi	5
+	lti
+	jz	etiqueta7
+	' * Cuerpo del while
+	' * If
+
+#line	40
+	push	bp
+	pushi	-208
+	addi
+	loadi
+	pushi	0
+	eqi
+	jz	etiqueta8
+	' * Cuerpo del if
+
+#line	41
+	' * Escritura
+	pushb	91
+	outb
+	' * Escritura
+	pushb	10
+	outb
+	jmp	etiqueta9
+ etiqueta8:
+	' * Cuerpo del else
+ etiqueta9:
+
+#line	43
+	push	bp
+	pushi	-210
+	addi
+	pushi	0
+	storei
+	' * While
+
+#line	44
+ etiqueta10:
+	push	bp
+	pushi	-210
+	addi
+	loadi
+	pushi	10
+	lti
+	jz	etiqueta11
+	' * Cuerpo del while
+	' * If
+
+#line	45
+	push	bp
+	pushi	-210
+	addi
+	loadi
+	pushi	0
+	eqi
+	jz	etiqueta12
+	' * Cuerpo del if
+
+#line	46
+	' * Escritura
+	pushb	91
+	outb
+	jmp	etiqueta13
+ etiqueta12:
+	' * Cuerpo del else
+ etiqueta13:
+
+#line	48
+	push	bp
+	pushi	-206
+	addi
+	push	bp
+	pushi	-208
+	addi
+	loadi
+	pushi	40
+	muli
+	addi
+	push	bp
+	pushi	-210
+	addi
+	loadi
+	pushi	4
+	muli
+	addi
+	push	bp
+	pushi	-208
+	addi
+	loadi
+	push	bp
+	pushi	-210
+	addi
+	loadi
+	addi
+	i2f
+	storef
+
+#line	49
+	' * Escritura
+	push	bp
+	pushi	-206
+	addi
+	push	bp
+	pushi	-208
+	addi
+	loadi
+	pushi	40
+	muli
+	addi
+	push	bp
+	pushi	-210
+	addi
+	loadi
+	pushi	4
+	muli
+	addi
+	loadf
+	outf
+	' * If
+
+#line	50
+	push	bp
+	pushi	-210
+	addi
+	loadi
+	pushi	9
+	eqi
+	jz	etiqueta14
+	' * Cuerpo del if
+
+#line	51
+	' * Escritura
+	pushb	93
+	outb
+	' * Escritura
+	pushb	10
+	outb
+	jmp	etiqueta15
+ etiqueta14:
+	' * Cuerpo del else
+
+#line	54
+	' * Escritura
+	pushb	44
+	outb
+ etiqueta15:
+
+#line	56
+	push	bp
+	pushi	-210
+	addi
+	push	bp
+	pushi	-210
+	addi
+	loadi
+	pushi	1
+	addi
+	storei
+	jmp	etiqueta10
+ etiqueta11:
+	' * If
+
+#line	58
+	push	bp
+	pushi	-208
+	addi
+	loadi
+	pushi	4
+	eqi
+	jz	etiqueta16
+	' * Cuerpo del if
+
+#line	59
+	' * Escritura
+	pushb	93
+	outb
+	' * Escritura
+	pushb	10
+	outb
+	jmp	etiqueta17
+ etiqueta16:
+	' * Cuerpo del else
+ etiqueta17:
+
+#line	61
+	push	bp
+	pushi	-208
+	addi
+	push	bp
+	pushi	-208
+	addi
+	loadi
+	pushi	1
+	addi
+	storei
+	jmp	etiqueta6
+ etiqueta7:
+	ret	0, 210, 0

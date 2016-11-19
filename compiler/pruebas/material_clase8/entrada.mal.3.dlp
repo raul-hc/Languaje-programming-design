@@ -1,0 +1,24 @@
+'''
+	Prueba semántico
+	DLP 15/16
+'''
+
+integer as int;
+real as double;
+
+a as struct {
+  a as int;
+};
+
+def main() {
+  print integer && real; # Error 1 -> No de puede hacer una comparación LOGICA con tipos reales (los operandos tienen que ser de tipo booleano)
+  print a >= 3;          # Error 2 -> No de puede hacer una comparación aritmetica entre tipoStruct y tipoEntero (tipoStruct >= tipoEntero => NULL)
+  while real {           # Error 3 -> La condicion de un WHILE tiene que ser de tipo entero (representación de booleano)
+    if real {            # Error 4 -> La condicion de un IF tiene que ser de tipo entero (representación de booleano)
+      print !real;       # Error 5 -> Se esta intentando negar un real -> deberia de ser un entero (representación de booleano)
+    }
+  }
+  
+  #print a+2;      # Error 6 (RAUL) -> Se esta intentando sumar un TipoStruct y un TipoEntero
+  
+}

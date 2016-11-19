@@ -1,0 +1,29 @@
+Un programa está formado por un conjunto de declaraciones seguidas de la función "main" que no devuelve nada, 
+no tiene parámetros y que consta de una repetición de cualquier número de sentencias.
+
+La definición de variables se hace mediante un identificador (o una lista de identificadores separados por comas) 
+ seguido de la palabra reservada as y de un tipo
+
+Un tipo puede ser un tipo básico "int", "double" y "char", así como el constructor de tipos "[]" con 
+ sintaxis Java, pero especificando siempre su tamaño con una constante entera (como en C).
+
+Una sentencia puede ser una asignación, una lectura o una escritura.
+
+Una escritura es la palabra reservada "print" seguida de una lista de expresiones.
+
+Una lectura es la palabra reservada "input" seguida de una lista de expresiones.
+
+Una asignación está compuesta por dos expresiones: una a la izquierda del operador y otra a su derecha.
+
+Las expresiones están formadas por:
+	Constantes Enteras sin signo
+	Constantes reales
+	Constantes caracter
+	Identificadores
+	Por orden de precedencia (de mayor a menor), los operadores 	
+		( )			Sin asociatividad
+		[]			Sin asociatividad
+		- unario	A Derechas
+		* / %		A Izquierdas
+		+ -			A Izquierdas
+		=			A derechas

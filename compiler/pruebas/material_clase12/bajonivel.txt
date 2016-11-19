@@ -1,0 +1,6 @@
+
+	RET <CTE_ENTERA>,<CTE_ENTERA>,<CTE_ENTERA>
+		Retorna de una función, indicándole:
+		1.- Los bytes que retorna.
+		2.- Los bytes que ocupan las variables locales.
+		3.- Los bytes que se pasaron como parámetros.

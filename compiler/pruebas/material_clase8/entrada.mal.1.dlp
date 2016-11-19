@@ -1,0 +1,14 @@
+'''
+	Prueba semántico
+	DLP 15/16
+'''
+
+integer as int;
+character as char;
+real as double;
+
+def main() {
+  character = 8; # Error 1 -> No se puede asignar un entero a un caracter (El tipo de la derecha es mas grande que el tipo de la izda)
+  3.5 = integer; # Error 2 -> A la izda no hay un LValue (este error se supone que ya esta tratado) 
+  input real*2;  # Error 3 -> A la izda no hay un LValue (este error se supone que ya esta tratado) 
+}

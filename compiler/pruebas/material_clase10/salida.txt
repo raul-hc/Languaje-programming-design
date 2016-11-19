@@ -1,0 +1,224 @@
+
+#source	"entrada.dlp"
+
+	' * char character (offset 0)
+	' * int integer (offset 1)
+	' * double real (offset 3)
+
+' Invocación al main (siempre igual)
+call main
+halt
+
+
+#line	12
+
+ main:
+	' * Parametros
+	' * Variables Locales
+	' * int linteger (offset -2)
+	' * char lcharacter (offset -3)
+	' * double lreal (offset -7)
+	enter	7
+
+#line	20
+	push	bp
+	pushi	-3
+	addi
+	pushb	99
+	storeb
+
+#line	21
+	pusha	0
+	push	bp
+	pushi	-3
+	addi
+	loadb
+	storeb
+
+#line	22
+	' * Escritura
+	pusha	0
+	loadb
+	outb
+	' * Escritura
+	pushb	61
+	outb
+	' * Escritura
+	push	bp
+	pushi	-3
+	addi
+	loadb
+	outb
+	' * Escritura
+	pushb	10
+	outb
+
+#line	24
+	push	bp
+	pushi	-2
+	addi
+	pushi	1
+	storei
+
+#line	25
+	pusha	1
+	push	bp
+	pushi	-3
+	addi
+	loadb
+	b2i
+	push	bp
+	pushi	-2
+	addi
+	loadi
+	muli
+	storei
+
+#line	26
+	' * Escritura
+	push	bp
+	pushi	-2
+	addi
+	loadi
+	outi
+	' * Escritura
+	pushb	32
+	outb
+	' * Escritura
+	pusha	1
+	loadi
+	outi
+	' * Escritura
+	pushb	10
+	outb
+
+#line	28
+	' * Lectura
+	push	bp
+	pushi	-7
+	addi
+	inf
+	storef
+
+#line	29
+	pusha	3
+	pushi	2
+	i2f
+	push	bp
+	pushi	-7
+	addi
+	loadf
+	mulf
+	storef
+
+#line	30
+	' * Escritura
+	pusha	3
+	loadf
+	outf
+	' * Escritura
+	pushb	61
+	outb
+	' * Escritura
+	pushi	2
+	i2f
+	push	bp
+	pushi	-7
+	addi
+	loadf
+	mulf
+	outf
+	' * Escritura
+	pushb	10
+	outb
+
+#line	37
+	' * Escritura
+	pushi	3
+	i2f
+	pushf	4.5
+	subf
+	outf
+	' * Escritura
+	pushb	32
+	outb
+	' * Escritura
+	pushb	48
+	b2i
+	i2f
+	pushf	48.0
+	divf
+	outf
+	' * Escritura
+	pushb	32
+	outb
+	' * Escritura
+	pushb	48
+	b2i
+	pushb	49
+	b2i
+	modi
+	outi
+	' * Escritura
+	pushb	32
+	outb
+	' * Escritura
+	pushb	48
+	b2i
+	pushb	49
+	b2i
+	addi
+	outi
+	' * Escritura
+	pushb	10
+	outb
+
+#line	46
+	' * Escritura
+	pushi	1
+	pushi	2
+	lti
+	outi
+	' * Escritura
+	pushb	32
+	outb
+	' * Escritura
+	pushi	4
+	pushi	3
+	gei
+	outi
+	' * Escritura
+	pushb	32
+	outb
+	' * Escritura
+	pushi	5
+	pushi	5
+	eqi
+	outi
+	' * Escritura
+	pushb	32
+	outb
+	' * Escritura
+	pushi	1
+	pushi	2
+	and
+	outi
+	' * Escritura
+	pushb	32
+	outb
+	' * Escritura
+	pushi	0
+	pushi	3
+	or
+	outi
+	' * Escritura
+	pushb	32
+	outb
+	' * Escritura
+	pushi	0
+	not
+	outi
+	' * Escritura
+	pushb	10
+	outb
+	ret	0, 7, 0

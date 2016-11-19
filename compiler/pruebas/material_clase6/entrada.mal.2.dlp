@@ -1,0 +1,10 @@
+'''
+	Prueba de análisis semántico
+	DLP 15/16	
+'''
+
+# Programa no compilable
+def main() {
+	i,j as int;
+	input i+j;
+}

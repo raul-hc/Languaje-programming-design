@@ -1,0 +1,32 @@
+
+# Variables globales
+integer as int;
+character as char;
+real as double;
+
+# Funciones
+def setValue(row as int, columnn as int, value as int, row as char) as double {  	# Parametro repetido
+	
+	prueba as double;
+	integer as double;
+	
+	if (integer >= 0 && real < real) && (integer >= 0 && real < real){
+		matrix[row][column] = value;												# Variable no definida
+	}
+	
+	return prueba;
+}
+
+def setValue() as int {  															# Funcion ya definida
+	return 0;
+}
+
+def setValue() {  																	# Funcion ya definida
+
+}
+
+# Programa principal
+def main() {
+
+}
+

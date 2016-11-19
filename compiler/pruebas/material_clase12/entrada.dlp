@@ -1,0 +1,71 @@
+'''
+	Generacion de codigo
+	DLP 15/16
+'''
+
+# Variables globales
+i,n,j as int;
+c as char;
+
+par as struct { 
+	entero as int;
+	caracter as char;
+};
+
+# Procedimiento
+def p() {}
+
+def f(r as double, e as int) as int {
+	real as double;
+	c as char;
+	real = par.caracter + par.entero + r + e;
+	c = '0';
+	return c cast int;
+}
+
+# Variable global
+matriz as int[10][10];
+
+# Funciones
+def rellenar(fila as int, valor as int, incremento as int) {
+	i,inc as int;
+	i = 0;
+	inc = incremento;
+	while (i < 10) {
+		matriz[fila][i] = valor + inc; 
+		i = i + 1;
+		inc = inc + incremento;
+	}
+}
+
+def mostrar(fila as int) {
+	i as int;
+	i = 0;
+	while (i < 10) {
+		print '(', fila, ',', i, ')', ':', matriz[fila][i], ' ';
+		i = i + 1;
+	}
+	print '\n';
+}
+
+# Programa principal
+def main() {
+	i as int;
+
+	p(); # Invocacion a procedimiento
+	i = 0;
+	par.caracter = '0';
+	par.entero = '0' cast int;
+	print f(i cast double,par.caracter cast int), '\n';
+
+	f(1.3,2); # Inv. a función como sentencia
+
+	i = 0;
+	j = 0;
+	while (i < 10) {
+		rellenar(i,j,1); 
+		mostrar(i);
+		i = i + 1;
+		j = i * 10;
+	}
+}

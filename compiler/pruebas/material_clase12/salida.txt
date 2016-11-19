@@ -1,0 +1,393 @@
+
+#source	"entrada.dlp"
+
+	' * int i (offset 0)
+	' * int n (offset 2)
+	' * int j (offset 4)
+	' * char c (offset 6)
+	' * STRUCT{  entero int,  caracter char,  } par (offset 7)
+	' * int[10][10] matriz (offset 10)
+
+' Invocación al main (siempre igual)
+call main
+halt
+
+
+#line	16
+
+ p:
+	' * Parametros
+	' * Variables Locales
+	enter	0
+	ret	0, 0, 0
+
+#line	24
+
+ f:
+	' * Parametros
+	' * double r (offset 6)
+	' * int e (offset 4)
+	' * Variables Locales
+	' * double real (offset -4)
+	' * char c (offset -5)
+	enter	5
+
+#line	21
+	push	bp
+	pushi	-4
+	addi
+	pusha	7
+	pushi	2
+	addi
+	loadb
+	b2i
+	pusha	7
+	pushi	0
+	addi
+	loadi
+	addi
+	i2f
+	push	bp
+	pushi	6
+	addi
+	loadf
+	addf
+	push	bp
+	pushi	4
+	addi
+	loadi
+	i2f
+	addf
+	storef
+
+#line	22
+	push	bp
+	pushi	-5
+	addi
+	pushb	48
+	storeb
+
+#line	23
+	' * return
+	push	bp
+	pushi	-5
+	addi
+	loadb
+	b2i
+	ret	2, 5, 6
+
+#line	39
+
+ rellenar:
+	' * Parametros
+	' * int fila (offset 8)
+	' * int valor (offset 6)
+	' * int incremento (offset 4)
+	' * Variables Locales
+	' * int i (offset -2)
+	' * int inc (offset -4)
+	enter	4
+
+#line	32
+	push	bp
+	pushi	-2
+	addi
+	pushi	0
+	storei
+
+#line	33
+	push	bp
+	pushi	-4
+	addi
+	push	bp
+	pushi	4
+	addi
+	loadi
+	storei
+	' * While
+
+#line	34
+ etiqueta0:
+	push	bp
+	pushi	-2
+	addi
+	loadi
+	pushi	10
+	lti
+	jz	etiqueta1
+	' * Cuerpo del while
+
+#line	35
+	pusha	10
+	push	bp
+	pushi	8
+	addi
+	loadi
+	pushi	20
+	muli
+	addi
+	push	bp
+	pushi	-2
+	addi
+	loadi
+	pushi	2
+	muli
+	addi
+	push	bp
+	pushi	6
+	addi
+	loadi
+	push	bp
+	pushi	-4
+	addi
+	loadi
+	addi
+	storei
+
+#line	36
+	push	bp
+	pushi	-2
+	addi
+	push	bp
+	pushi	-2
+	addi
+	loadi
+	pushi	1
+	addi
+	storei
+
+#line	37
+	push	bp
+	pushi	-4
+	addi
+	push	bp
+	pushi	-4
+	addi
+	loadi
+	push	bp
+	pushi	4
+	addi
+	loadi
+	addi
+	storei
+	jmp	etiqueta0
+ etiqueta1:
+	ret	0, 4, 6
+
+#line	49
+
+ mostrar:
+	' * Parametros
+	' * int fila (offset 4)
+	' * Variables Locales
+	' * int i (offset -2)
+	enter	2
+
+#line	43
+	push	bp
+	pushi	-2
+	addi
+	pushi	0
+	storei
+	' * While
+
+#line	44
+ etiqueta2:
+	push	bp
+	pushi	-2
+	addi
+	loadi
+	pushi	10
+	lti
+	jz	etiqueta3
+	' * Cuerpo del while
+
+#line	45
+	' * Escritura
+	pushb	40
+	outb
+	' * Escritura
+	push	bp
+	pushi	4
+	addi
+	loadi
+	outi
+	' * Escritura
+	pushb	44
+	outb
+	' * Escritura
+	push	bp
+	pushi	-2
+	addi
+	loadi
+	outi
+	' * Escritura
+	pushb	41
+	outb
+	' * Escritura
+	pushb	58
+	outb
+	' * Escritura
+	pusha	10
+	push	bp
+	pushi	4
+	addi
+	loadi
+	pushi	20
+	muli
+	addi
+	push	bp
+	pushi	-2
+	addi
+	loadi
+	pushi	2
+	muli
+	addi
+	loadi
+	outi
+	' * Escritura
+	pushb	32
+	outb
+
+#line	46
+	push	bp
+	pushi	-2
+	addi
+	push	bp
+	pushi	-2
+	addi
+	loadi
+	pushi	1
+	addi
+	storei
+	jmp	etiqueta2
+ etiqueta3:
+
+#line	48
+	' * Escritura
+	pushb	10
+	outb
+	ret	0, 2, 2
+
+#line	52
+
+ main:
+	' * Parametros
+	' * Variables Locales
+	' * int i (offset -2)
+	enter	2
+
+#line	55
+	call	p
+
+#line	56
+	push	bp
+	pushi	-2
+	addi
+	pushi	0
+	storei
+
+#line	57
+	pusha	7
+	pushi	2
+	addi
+	pushb	48
+	storeb
+
+#line	58
+	pusha	7
+	pushi	0
+	addi
+	pushb	48
+	b2i
+	storei
+
+#line	59
+	' * Escritura
+	push	bp
+	pushi	-2
+	addi
+	loadi
+	i2f
+	pusha	7
+	pushi	2
+	addi
+	loadb
+	b2i
+	call	f
+	outi
+	' * Escritura
+	pushb	10
+	outb
+
+#line	61
+	pushf	1.3
+	pushi	2
+	call	f
+	popi
+
+#line	63
+	push	bp
+	pushi	-2
+	addi
+	pushi	0
+	storei
+
+#line	64
+	pusha	4
+	pushi	0
+	storei
+	' * While
+
+#line	65
+ etiqueta4:
+	push	bp
+	pushi	-2
+	addi
+	loadi
+	pushi	10
+	lti
+	jz	etiqueta5
+	' * Cuerpo del while
+
+#line	66
+	push	bp
+	pushi	-2
+	addi
+	loadi
+	pusha	4
+	loadi
+	pushi	1
+	call	rellenar
+
+#line	67
+	push	bp
+	pushi	-2
+	addi
+	loadi
+	call	mostrar
+
+#line	68
+	push	bp
+	pushi	-2
+	addi
+	push	bp
+	pushi	-2
+	addi
+	loadi
+	pushi	1
+	addi
+	storei
+
+#line	69
+	pusha	4
+	push	bp
+	pushi	-2
+	addi
+	loadi
+	pushi	10
+	muli
+	storei
+	jmp	etiqueta4
+ etiqueta5:
+	ret	0, 2, 0

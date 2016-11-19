@@ -1,0 +1,8 @@
+/ast/
+/semantico/
+/tablaSimbolos/
+/sintactico/
+/visitor/
+/errors/
+/GeneracionCodigo/
+/lexico/

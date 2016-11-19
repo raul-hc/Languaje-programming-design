@@ -1,0 +1,11 @@
+'''
+	Manejador de Errores
+	DLP 15/16
+'''
+
+i,i as int; # Error variable duplicada
+
+# Programa principal
+def main() {
+
+}
